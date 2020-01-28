@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "glsl2shaderlab", "glsl2shaderlab\glsl2shaderlab.csproj", "{A9E5CB3A-1B13-4F52-9A50-4E57F656ECD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{C5BBA146-F9FC-400A-AB67-00E8FF932D86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9E5CB3A-1B13-4F52-9A50-4E57F656ECD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E5CB3A-1B13-4F52-9A50-4E57F656ECD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E5CB3A-1B13-4F52-9A50-4E57F656ECD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E5CB3A-1B13-4F52-9A50-4E57F656ECD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BBA146-F9FC-400A-AB67-00E8FF932D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BBA146-F9FC-400A-AB67-00E8FF932D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BBA146-F9FC-400A-AB67-00E8FF932D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BBA146-F9FC-400A-AB67-00E8FF932D86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
