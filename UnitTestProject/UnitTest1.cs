@@ -1,8 +1,9 @@
 using NUnit.Framework;
+using GLSL2Shaderlab.Lexing;
 
 namespace UnitTestProject
 {
-    public class Tests
+    public class LexerTest
     {
         [SetUp]
         public void Setup()
@@ -10,7 +11,7 @@ namespace UnitTestProject
         }
 
         [Test]
-        public void Test1()
+        public void TestNextToken1()
         {
             Assert.Pass();
         }
