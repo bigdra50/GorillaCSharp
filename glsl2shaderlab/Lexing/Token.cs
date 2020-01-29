@@ -25,6 +25,7 @@ namespace GLSL2Shaderlab.Lexing
         EQUAL,    // =
         COMMA,     // ,
         SEMICOLON,    // ;
+        COLON,    //:
         LPAREN,    // (
         RPAREN,    // )
         LBRACKET,    // {
