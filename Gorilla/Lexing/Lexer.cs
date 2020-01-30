@@ -20,25 +20,16 @@ namespace Gorilla.Lexing
             switch (this.CurrentChar)
             {
                 case '=':
-                    token = new Token(TokenType.EQUAL, this.CurrentChar.ToString());
+                    token = new Token(TokenType.ASSIGN, this.CurrentChar.ToString());
                     break;
                 case '+':
-                case '-':
-                    token = new Token(TokenType.TERM_OPERATOR, this.CurrentChar.ToString());
-                    break;
-                case '*':
-                case '/':
-                case '%':
-                    token = new Token(TokenType.FACTOR_OPERATOR, this.CurrentChar.ToString());
+                    token = new Token(TokenType.PLUS, this.CurrentChar.ToString());
                     break;
                 case ',':
                     token = new Token(TokenType.COMMA, this.CurrentChar.ToString());
                     break;
                 case ';':
                     token = new Token(TokenType.SEMICOLON, this.CurrentChar.ToString());
-                    break;
-                case ':':
-                    token = new Token(TokenType.COLON, this.CurrentChar.ToString());
                     break;
                 case '(':
                     token = new Token(TokenType.LPAREN, this.CurrentChar.ToString());
@@ -47,10 +38,10 @@ namespace Gorilla.Lexing
                     token = new Token(TokenType.RPAREN, this.CurrentChar.ToString());
                     break;
                 case '{':
-                    token = new Token(TokenType.LBRACKET, this.CurrentChar.ToString());
+                    token = new Token(TokenType.LBRACE, this.CurrentChar.ToString());
                     break;
                 case '}':
-                    token = new Token(TokenType.RBRACKET, this.CurrentChar.ToString());
+                    token = new Token(TokenType.RBRACE, this.CurrentChar.ToString());
                     break;
                 case (char) 0:
                     token = new Token(TokenType.EOF, "");
@@ -66,7 +57,7 @@ namespace Gorilla.Lexing
                     else if (this.IsDigit(this.CurrentChar))
                     {
                         var number = this.ReadNumber();
-                        token = new Token(TokenType.NUMBER, number);
+                        token = new Token(TokenType.INT, number);
                     }
                     else
                     {

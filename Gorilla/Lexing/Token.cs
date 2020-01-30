@@ -30,9 +30,9 @@ namespace Gorilla.Lexing
         
         public static Dictionary<string, TokenType> Keywords = new Dictionary<string, TokenType>()
         {
+            {"let", TokenType.LET},
+            {"int", TokenType.INT},
             {"return", TokenType.RETURN_KEYWORD},
-            {"int", TokenType.TYPE_KEYWORD},
-            {"float", TokenType.TYPE_KEYWORD}
         };
     }
 
@@ -41,30 +41,19 @@ namespace Gorilla.Lexing
         // 不正なトークン, 終端
         ILLEGAL,
         EOF,
-        
-        TERM_OPERATOR,    // +, -
-        FACTOR_OPERATOR,    // *, /, %
-        COMPARE_OPERATOR,    // ==, !=, >, >=, <, <=
-        LOGIC_OPERATOR,     // &&, ||
-        EQUAL,    // =
-        COMMA,     // ,
-        SEMICOLON,    // ;
-        COLON,    //:
-        LPAREN,    // (
-        RPAREN,    // )
-        LBRACKET,    // {
-        RBRACKET,    // }
-        RETURN_KEYWORD,    // return
-        IF_KEYWORD,    // if
-        ELSE_KEYWORD, 
-        WHILE_KEYWORD,
-        FOR_KEYWORD,
-        OUT_KEYWORD,
-        IN_KEYWORD,
-        TYPE_KEYWORD,
         IDENTIFY,
-        NUMBER,
-        CHAR_ALPHABET,
-        CHAR_NUMBER,
+        INT,
+        ASSIGN,
+        PLUS,
+        COMMA,
+        SEMICOLON,
+        LPAREN,
+        RPAREN,
+        LBRACE,
+        RBRACE,
+        FUNCTION,
+        LET,
+        RETURN_KEYWORD,
+
     }
 }
