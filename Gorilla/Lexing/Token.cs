@@ -55,5 +55,12 @@ namespace Gorilla.Lexing
         LET,
         RETURN_KEYWORD,
 
+        EQ,
+        NOT_EQ,
+        GT,
+        LT,
+        ASTERISK,
+        SLASH,
+        MINUS
     }
 }

@@ -103,5 +103,42 @@ int add(int x, int y) {
                 Assert.AreEqual(testToken.Literal, token.Literal, "トークンのリテラルが間違えています");
             }
         }
+
+        [Test]
+        public void TestNextToken3()
+        {
+            var input = "1 == 1; 1 != 0; ><*/-=";
+
+            var testTokens = new List<Token>()
+            {
+                // 1 == 1;
+                new Token(TokenType.INT, "1"),
+                new Token(TokenType.EQ, "=="),
+                new Token(TokenType.INT, "1"),
+                new Token(TokenType.SEMICOLON, ";"),
+                // 1 != 0;
+                new Token(TokenType.INT, "1"),
+                new Token(TokenType.NOT_EQ, "!="),
+                new Token(TokenType.INT, "0"),
+                new Token(TokenType.SEMICOLON, ";"),
+                // ><*/-=
+                new Token(TokenType.GT, ">"),
+                new Token(TokenType.LT, "<"),
+                new Token(TokenType.ASTERISK, "*"),
+                new Token(TokenType.SLASH, "/"),
+                new Token(TokenType.MINUS, "-"),
+                new Token(TokenType.ASSIGN, "="),
+                new Token(TokenType.EOF, ""),
+            };
+                
+                var lexer = new Lexer(input);
+
+                foreach (var testToken in testTokens)
+                {
+                    var token = lexer.NextToken();
+                    Assert.AreEqual(testToken.Type, token.Type, "トークンの種類が間違っています.");
+                    Assert.AreEqual(testToken.Literal, token.Literal, "トークンのリテラルが間違っています.");
+                }
+        }
     }
 }
