@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using Gorilla.Lexing;
 using NUnit.Framework;
-using GLSL2Shaderlab.Lexing;
 
 namespace UnitTestProject
 {

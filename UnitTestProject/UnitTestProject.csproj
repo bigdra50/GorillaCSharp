@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\glsl2shaderlab\glsl2shaderlab.csproj" />
+      <ProjectReference Include="..\Gorilla\Gorilla.csproj" />
     </ItemGroup>
 
 </Project>

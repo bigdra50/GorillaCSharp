@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GLSL2Shaderlab
+namespace Gorilla
 {
     class Program
     {
