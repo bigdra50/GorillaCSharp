@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using Gorilla.Lexing;
 using NUnit.Framework;
 
@@ -130,15 +131,54 @@ int add(int x, int y) {
                 new Token(TokenType.ASSIGN, "="),
                 new Token(TokenType.EOF, ""),
             };
-                
-                var lexer = new Lexer(input);
 
-                foreach (var testToken in testTokens)
-                {
-                    var token = lexer.NextToken();
-                    Assert.AreEqual(testToken.Type, token.Type, "トークンの種類が間違っています.");
-                    Assert.AreEqual(testToken.Literal, token.Literal, "トークンのリテラルが間違っています.");
-                }
+            var lexer = new Lexer(input);
+
+            foreach (var testToken in testTokens)
+            {
+                var token = lexer.NextToken();
+                Assert.AreEqual(testToken.Type, token.Type, "トークンの種類が間違っています.");
+                Assert.AreEqual(testToken.Literal, token.Literal, "トークンのリテラルが間違っています.");
+            }
+        }
+
+        [Test]
+        public void TestNextToken4()
+        {
+            var input = @"if (5 < 10) {
+    return true;
+} else {
+    return false;
+}";
+            var testTokens = new List<Token>()
+            {
+                new Token(TokenType.IF_STATEMENT, "if"),
+                new Token(TokenType.LPAREN, "("),
+                new Token(TokenType.INT, "5"),
+                new Token(TokenType.LT, "<"),
+                new Token(TokenType.INT, "10"),
+                new Token(TokenType.RPAREN, ")"),
+                new Token(TokenType.LBRACE, "{"),
+                new Token(TokenType.RETURN_KEYWORD, "return"),
+                new Token(TokenType.TRUE, "true"),
+                new Token(TokenType.SEMICOLON, ";"),
+                new Token(TokenType.RBRACE, "}"),
+                new Token(TokenType.ELSE, "else"),
+                new Token(TokenType.LBRACE, "{"),
+                new Token(TokenType.RETURN_KEYWORD, "return"),
+                new Token(TokenType.FALSE, "false"),
+                new Token(TokenType.SEMICOLON, ";"),
+                new Token(TokenType.RBRACE, "}"),
+                new Token(TokenType.EOF, ""),
+            };
+
+            var lexer = new Lexer(input);
+            foreach (var testToken in testTokens)
+            {
+                var token = lexer.NextToken();
+                Assert.AreEqual(testToken.Type, token.Type, "トークンの種類が間違えています.");
+                Assert.AreEqual(testToken.Literal, token.Literal, "トークンのリテラルが間違えています.");
+            }
         }
     }
 }

@@ -33,6 +33,11 @@ namespace Gorilla.Lexing
             {"let", TokenType.LET},
             {"int", TokenType.INT},
             {"return", TokenType.RETURN_KEYWORD},
+            {"if", TokenType.IF_STATEMENT},
+            {"else", TokenType.ELSE},
+            {"true", TokenType.TRUE},
+            {"false", TokenType.FALSE},
+            {"fn", TokenType.FUNCTION},
         };
     }
 
@@ -61,6 +66,13 @@ namespace Gorilla.Lexing
         LT,
         ASTERISK,
         SLASH,
-        MINUS
+        MINUS,
+        BANG,
+        GT_EQ,
+        LT_EQ,
+        IF_STATEMENT,
+        TRUE,
+        ELSE,
+        FALSE
     }
 }

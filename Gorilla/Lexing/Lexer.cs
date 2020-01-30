@@ -20,10 +20,63 @@ namespace Gorilla.Lexing
             switch (this.CurrentChar)
             {
                 case '=':
-                    token = new Token(TokenType.ASSIGN, this.CurrentChar.ToString());
+                    if (this.NextChar == '=')
+                    {
+                        token = new Token(TokenType.EQ, "==");
+                        this.ReadChar();
+                    }
+                    else
+                    {
+                        token = new Token(TokenType.ASSIGN, this.CurrentChar.ToString());
+                    }
+
                     break;
                 case '+':
                     token = new Token(TokenType.PLUS, this.CurrentChar.ToString());
+                    break;
+                case '-':
+                    token = new Token(TokenType.MINUS, this.CurrentChar.ToString());
+                    break;
+                case '*':
+                    token = new Token(TokenType.ASTERISK, this.CurrentChar.ToString());
+                    break;
+                case '/':
+                    token = new Token(TokenType.SLASH, this.CurrentChar.ToString());
+                    break;
+                case '!':
+                    if (this.NextChar == '=')
+                    {
+                        token = new Token(TokenType.NOT_EQ, "!=");
+                        this.ReadChar();
+                    }
+                    else
+                    {
+                        token = new Token(TokenType.BANG, this.CurrentChar.ToString());
+                    }
+
+                    break;
+                case '>':
+                    if (this.NextChar == '=')
+                    {
+                        token = new Token(TokenType.GT_EQ, ">=");
+                        this.ReadChar();
+                    }
+                    else
+                    {
+                        token = new Token(TokenType.GT, this.CurrentChar.ToString());
+                    }
+
+                    break;
+                case '<':
+                    if (this.NextChar == '=')
+                    {
+                        token = new Token(TokenType.LT_EQ, "<=");
+                        this.ReadChar();
+                    }
+                    else
+                    {
+                        token = new Token(TokenType.LT, this.CurrentChar.ToString());
+                    }
                     break;
                 case ',':
                     token = new Token(TokenType.COMMA, this.CurrentChar.ToString());
